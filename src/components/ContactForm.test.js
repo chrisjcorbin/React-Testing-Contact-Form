@@ -3,9 +3,7 @@ import { render, screen, fireEvent, act, getByTestId } from '@testing-library/re
 import ContactForm from './ContactForm';
 
 test('ContactForm adds new contacts to the list', () => {
-    act(() => {
     render(<ContactForm />);
-    });
 
     const firstNameInput = screen.getByTestId(/firstName/i);
     const lastNameInput = screen.getByTestId(/lastName/i);
@@ -19,7 +17,8 @@ test('ContactForm adds new contacts to the list', () => {
 
     const submitButton = screen.getByTestId(/submit/i);
 
-    act(() => {submitButton.click()
+    act(() => {
+    fireEvent.click(submitButton);
     });
 
     expect(firstNameInput).toHaveValue('Chris');
