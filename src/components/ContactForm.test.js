@@ -18,8 +18,8 @@ test('ContactForm adds new contacts to the list', () => {
     const submitButton = screen.getByTestId(/submit/i);
     fireEvent.click(submitButton);
 
-    expect(firstNameInput).toHaveValue('Chris');
-    expect(lastNameInput).toHaveValue('Corbin');
-    expect(emailInput).toHaveValue('corbin-christopher@lambndastudents.com');
-    expect(messageInput).toHaveValue('I may like this better than Cypress!?');
+    expect(firstNameInput.value).toBe('Chris');
+    expect(lastNameInput.value).toBe('Corbin');
+    expect(emailInput.value).toBe('corbin-christopher@lambndastudents.com');
+    expect(messageInput.value).toBe('I may like this better than Cypress!?');
     });
